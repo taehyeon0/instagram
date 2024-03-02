@@ -13,3 +13,5 @@ spring:
     password: 1q2w3e4r!!
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql.init.mode: always
+  mybatis:
+    configuration: map-underscore-to-camel-case=true
