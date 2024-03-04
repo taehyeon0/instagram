@@ -19,7 +19,15 @@ public class FeedRepository {
         feedMapper.save(feed);
     }
 
-    public Feed selectById(int id) {
+    public void update(Feed feed) {
+        feedMapper.update(feed);
+    }
+
+    public void delete(long id) {
+        feedMapper.delete(id);
+    }
+
+    public Feed selectById(long id) {
         return feedMapper.selectById(id);
     }
 

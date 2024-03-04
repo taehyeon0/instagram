@@ -8,6 +8,8 @@ import java.util.List;
 @Mapper
 public interface FeedMapper {
     void save(Feed feed);
-    Feed selectById(int id);
+    void delete(long id);
+    void update(Feed feed);
+    Feed selectById(long id);
     List<Feed> selectAll();
 }

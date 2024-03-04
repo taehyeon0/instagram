@@ -12,11 +12,23 @@
     <select id="selectById" resultType="Feed">
         select *
         from feed
-        where feed_id = #{feed_id}
+        where feed_id = #{id}
     </select>
 
     <select id="selectAll" resultType="hashmap">
         select *
         from feed
     </select>
+
+    <update id="update">
+        update feed
+        set content=#{content}, modified_at=#{modifiedAt}
+        where feed_id=#{feedId}
+    </update>
+
+    <delete id="delete">
+        delete
+        from feed
+        where feed_id =#{id}
+    </delete>
 </mapper>
