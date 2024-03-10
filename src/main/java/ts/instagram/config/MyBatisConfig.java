@@ -2,13 +2,12 @@ package ts.instagram.config;
 
 import lombok.RequiredArgsConstructor;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ts.instagram.mapper.FeedMapper;
-import ts.instagram.mapper.UserMapper;
+import ts.instagram.mapper.InstauserMapper;
 import ts.instagram.repository.FeedRepository;
-import ts.instagram.repository.UserRepository;
+import ts.instagram.repository.InstauserRepository;
 
 @Configuration
 @MapperScan(basePackages = "ts.instagram.mapper")
@@ -16,7 +15,7 @@ import ts.instagram.repository.UserRepository;
 public class MyBatisConfig {
 
     private final FeedMapper feedMapper;
-    private final UserMapper userMapper;
+    private final InstauserMapper instauserMapper;
 
     @Bean
     public FeedRepository feedRepository() {
@@ -24,8 +23,8 @@ public class MyBatisConfig {
     }
 
     @Bean
-    public UserRepository userRepository() {
-        return new UserRepository(userMapper);
+    public InstauserRepository userRepository() {
+        return new InstauserRepository(instauserMapper);
     }
 
 }

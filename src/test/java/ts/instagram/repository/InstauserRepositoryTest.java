@@ -13,8 +13,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
+import ts.instagram.domain.Feed;
 import ts.instagram.domain.Instauser;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,9 +33,9 @@ public class InstauserRepositoryTest {
     //객체 간의 결합도를 낮추고 코드의 유연성과 재사용성을 향상
     //생성자, 세터 메서드, 필드에 사용 가능
     @Autowired
-    UserRepository userRepository;
+    InstauserRepository instauserRepository;
 
-    @DisplayName("User Mapper Select Test")
+    @DisplayName("instauser Mapper Select Test")
     @Test //해당 메서드가 JUnit 테스트로 실행
     public void mybatis_Mapper_XML_Test() throws Exception {
 
@@ -45,12 +48,26 @@ public class InstauserRepositoryTest {
         // then
         assertThat(user.userId).isEqualTo("1");*/
 
-        List<Instauser> result = userRepository.selectAll();
+        List<Instauser> result = instauserRepository.selectAll();
         log.info("result={}", result);
 
         // then
         assertThat(result).isNotEmpty();
 
+
+    }
+
+    public void insertInstauser(){
+
+        /*long previousCount = feedRepository.selectAll().stream().count();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        Feed feed = new Feed(2, 0, "abc", LocalDateTime.parse("2021-05-30 23:53:46", formatter), "than", LocalDateTime.parse("2021-05-30 23:53:46", formatter), "than");
+
+        // when
+        feedRepository.save(feed);
+
+        // then
+        assertThat(feedRepository.selectAll().stream().count()).isEqualTo(previousCount + 1);*/
 
     }
 

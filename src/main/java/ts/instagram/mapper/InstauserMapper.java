@@ -7,7 +7,7 @@ import java.util.List;
 
 // @Mapper 어노테이션을 통한 mapper 등록
 @Mapper
-public interface UserMapper {
+public interface InstauserMapper {
 
     // @Select, @insert 등의 어노테이션으로 xml 작성 없이 간단한 쿼리문을 날릴 수 있음.
     // @Select("Select * from orderbook where seq = #{seq}")

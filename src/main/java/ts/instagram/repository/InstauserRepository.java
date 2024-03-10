@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import ts.instagram.domain.Instauser;
-import ts.instagram.mapper.UserMapper;
+import ts.instagram.mapper.InstauserMapper;
 
 import java.util.List;
 
@@ -20,14 +20,16 @@ import java.util.List;
 //생성자 : OOP에서 클래스의 인스턴스를 생성할 때 호출되는 특수한 메서드 , 객체를 초기화 하기위함, 생성자를 통해 객체를 한번 설정하면 변경 불가
 @RequiredArgsConstructor
 
-public class UserRepository {
-    private final UserMapper userMapper;
+public class InstauserRepository {
+    private final InstauserMapper instauserMapper;
     /*public User getUser(String id) {
         return userMapper.selectById(id);
     }*/
 
     public List<Instauser> selectAll() {
-        return userMapper.selectAll();
+
+        return instauserMapper.selectAll();
+
     }
 
 
