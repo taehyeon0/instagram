@@ -11,9 +11,9 @@ CREATE TABLE feed
     modified_by varchar(100)
 );
 
-DROP TABLE IF EXISTS USER;
+DROP TABLE IF EXISTS instauser;
 
-CREATE TABLE USER
+CREATE TABLE instauser
 (
     user_id INT ,
     user_nickname	varchar(60),

@@ -5,6 +5,6 @@
 <mapper namespace="ts.instagram.mapper.UserMapper">
 
     <select id="selectAll" resultType="hashmap">
-        select * from user
+        select * from Instauser
     </select>
 </mapper>
