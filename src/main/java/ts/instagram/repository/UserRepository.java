@@ -3,9 +3,7 @@ package ts.instagram.repository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
-import ts.instagram.domain.Feed;
-import ts.instagram.domain.User;
-import ts.instagram.mapper.FeedMapper;
+import ts.instagram.domain.Instauser;
 import ts.instagram.mapper.UserMapper;
 
 import java.util.List;
@@ -28,7 +26,7 @@ public class UserRepository {
         return userMapper.selectById(id);
     }*/
 
-    public List<User> selectAll() {
+    public List<Instauser> selectAll() {
         return userMapper.selectAll();
     }
 

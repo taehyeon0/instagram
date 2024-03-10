@@ -13,8 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import ts.instagram.domain.User;
-import ts.instagram.mapper.UserMapper;
+import ts.instagram.domain.Instauser;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j //  Lombok 라이브러리의 어노테이션으로, 간단한 로깅을 위해 사용
 @Transactional // 트랜잭션 처리를 지원, 테스트 중에 데이터베이스 트랜잭션을 롤백하는 데 사용
 @SpringBootTest // 테스트용 애플리케이션 컨텍스트를 설정
-public class UserRepositoryTest {
+public class InstauserRepositoryTest {
     //@Autowired
     //의존성 주입(Dependency Injection)을 수행하는 데에 활용
     //스프링 컨테이너가 객체들 간의 의존 관계를 설정해주는 디자인 패턴
@@ -46,7 +45,7 @@ public class UserRepositoryTest {
         // then
         assertThat(user.userId).isEqualTo("1");*/
 
-        List<User> result = userRepository.selectAll();
+        List<Instauser> result = userRepository.selectAll();
         log.info("result={}", result);
 
         // then

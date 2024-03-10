@@ -3,10 +3,9 @@ package ts.instagram.domain;
 import lombok.Data;
 
 import java.sql.Date;
-import java.time.LocalDateTime;
 
 @Data
-public class User {
+public class Instauser {
     /*public int user_Id;
     public String user_nickname;
     public String password;
@@ -29,7 +28,7 @@ public class User {
     private Date modifiedAt;
     private String modifiedBy;
 
-    public User(int userId, String userNickname, String password, String name, String phone, String content, Date createdAt, String createdBy, Date modifiedAt, String modifiedBy) {
+    public Instauser(int userId, String userNickname, String password, String name, String phone, String content, Date createdAt, String createdBy, Date modifiedAt, String modifiedBy) {
         this.userId = userId;
         this.userNickname = userNickname;
         this.password = password;
