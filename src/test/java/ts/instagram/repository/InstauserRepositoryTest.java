@@ -90,6 +90,21 @@ public class InstauserRepositoryTest {
         assertThat(instauserRepository.selectById(1).getUserNickname()).isEqualTo(updatedInstauser.getUserNickname());
     }
 
+    @DisplayName("INSTAUSER Delete Test")
+    @Test
+    void deleteInstauser() {
+        // given
+        Instauser user = instauserRepository.selectById(1);
+        log.info("user={}", user);
+        long previousCount = instauserRepository.selectAll().stream().count();
+
+        // when
+        instauserRepository.delete(1);
+
+        // then
+        assertThat(instauserRepository.selectAll().stream().count()).isEqualTo(previousCount - 1);
+    }
+
 
 
 }
