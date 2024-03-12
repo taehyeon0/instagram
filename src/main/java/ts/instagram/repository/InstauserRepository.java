@@ -38,8 +38,13 @@ public class InstauserRepository {
     public Instauser selectById(long id) {
         return instauserMapper.selectById(id);
     }
+
     public void update(Instauser instauser) {
         instauserMapper.update(instauser);
+    }
+
+    public void delete(long id) {
+        instauserMapper.delete(id);
     }
 
 
