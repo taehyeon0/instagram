@@ -16,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import ts.instagram.domain.Feed;
 import ts.instagram.domain.Instauser;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -35,7 +37,7 @@ public class InstauserRepositoryTest {
     @Autowired
     InstauserRepository instauserRepository;
 
-    @DisplayName("instauser Mapper Select Test")
+    @DisplayName("INSTAUSER Mapper Select Test")
     @Test //해당 메서드가 JUnit 테스트로 실행
     public void mybatis_Mapper_XML_Test() throws Exception {
 
@@ -57,19 +59,30 @@ public class InstauserRepositoryTest {
 
     }
 
+    @DisplayName("INSTAUSER Insert Test")
+    @Test //해당 메서드가 JUnit 테스트로 실행
     public void insertInstauser(){
 
-        /*long previousCount = feedRepository.selectAll().stream().count();
+        long previousCount = instauserRepository.selectAll().stream().count(); // instauserRepository.selectAll() 을 .stream() 스트림으로 변환하고, count() 요소 수를 셈
+        // stream()에 기능이 많음 찾아볼 것
+
+        // 포맷팅 정의
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        Feed feed = new Feed(2, 0, "abc", LocalDateTime.parse("2021-05-30 23:53:46", formatter), "than", LocalDateTime.parse("2021-05-30 23:53:46", formatter), "than");
+
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+         Instauser user = new Instauser(2, "admin", "1q2w3e4r", "admin2@naver.com","어드민2", "010-1234-1111","자기소개", LocalDateTime.parse("2021-05-30 23:53:46", formatter), "admin", LocalDateTime.parse("2021-05-30 23:53:46", formatter),"admin");
 
         // when
-        feedRepository.save(feed);
+        instauserRepository.save(user);
 
         // then
-        assertThat(feedRepository.selectAll().stream().count()).isEqualTo(previousCount + 1);*/
+        //assertThat(result, is(equalTo(expected))); result가 expected가 일치하는지 검사.
+        //만약 일치하지 않는다면 테스트는 실패
+        //insert가 성공하여, 전체 조회했을 때 개수가 이전의 카운트개수 +1과 같다면
+        assertThat(instauserRepository.selectAll().stream().count()).isEqualTo(previousCount + 1);
 
     }
+
 
 
 }

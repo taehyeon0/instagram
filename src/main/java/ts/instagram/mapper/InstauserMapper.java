@@ -1,6 +1,7 @@
 package ts.instagram.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import ts.instagram.domain.Feed;
 import ts.instagram.domain.Instauser;
 
 import java.util.List;
@@ -13,6 +14,8 @@ public interface InstauserMapper {
     // @Select("Select * from orderbook where seq = #{seq}")
     //User getUser(@Param("seq") String seq);
     List<Instauser> selectAll();
+
+    void save(Instauser instauser);
 
 
 }
