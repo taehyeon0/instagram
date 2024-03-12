@@ -17,7 +17,7 @@ public class Instauser {
     public LocalDateTime modified_at;
     public String modified_by;*/
 
-    private int userId;
+    private long userId;
     private String userNickname;
     private String password;
     private String email;
@@ -29,7 +29,7 @@ public class Instauser {
     private LocalDateTime modifiedAt;
     private String modifiedBy;
 
-    public Instauser(int userId, String userNickname, String password,String email ,String name, String phone, String content, LocalDateTime createdAt, String createdBy, LocalDateTime modifiedAt, String modifiedBy) {
+    public Instauser(long userId, String userNickname, String password,String email ,String name, String phone, String content, LocalDateTime createdAt, String createdBy, LocalDateTime modifiedAt, String modifiedBy) {
         this.userId = userId;
         this.userNickname = userNickname;
         this.password = password;

@@ -17,5 +17,8 @@ public interface InstauserMapper {
 
     void save(Instauser instauser);
 
+    Instauser selectById(long id);
+    void update(Instauser instauser);
+
 
 }
