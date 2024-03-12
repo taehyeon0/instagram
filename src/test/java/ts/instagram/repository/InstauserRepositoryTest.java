@@ -37,18 +37,9 @@ public class InstauserRepositoryTest {
     @Autowired
     InstauserRepository instauserRepository;
 
-    @DisplayName("INSTAUSER Mapper Select Test")
+    @DisplayName("INSTAUSER Select Test")
     @Test //해당 메서드가 JUnit 테스트로 실행
-    public void mybatis_Mapper_XML_Test() throws Exception {
-
-        /*// given
-        String seq = "1";
-
-        // when
-        User user = userMapper.getUser(seq);
-
-        // then
-        assertThat(user.userId).isEqualTo("1");*/
+    public void selectAllInstauser() throws Exception {
 
         List<Instauser> result = instauserRepository.selectAll();
         log.info("result={}", result);
@@ -81,6 +72,22 @@ public class InstauserRepositoryTest {
         //insert가 성공하여, 전체 조회했을 때 개수가 이전의 카운트개수 +1과 같다면
         assertThat(instauserRepository.selectAll().stream().count()).isEqualTo(previousCount + 1);
 
+    }
+
+    @DisplayName("INSTAUSER Update Test")
+    @Test
+    void updateInstauser() {
+        // given
+        Instauser instauser = instauserRepository.selectById(1); // user_id = 1을 조회
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        Instauser updatedInstauser = new Instauser(1, "updateadmin", "1q2w3e4r", "admin2@naver.com","어드민2", "010-1234-1111","자기소개", LocalDateTime.parse("2021-05-30 23:53:46", formatter), "admin", LocalDateTime.parse("2021-05-30 23:53:46", formatter),"admin");
+
+        // when
+        instauserRepository.update(updatedInstauser);
+
+        // then
+        assertThat(instauserRepository.selectById(1).getUserNickname()).isEqualTo(updatedInstauser.getUserNickname());
     }
 
 

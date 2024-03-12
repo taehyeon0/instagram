@@ -12,4 +12,16 @@
         insert into instauser (user_id, user_nickname, password, email, name, phone, content, created_at, created_by, modified_at, modified_by)
         values (#{userId}, #{userNickname}, #{password}, #{email}, #{name}, #{phone}, #{content}, #{createdAt}, #{createdBy}, #{modifiedAt}, #{modifiedBy})
     </insert>
+
+    <update id="update">
+        update instauser
+        set user_nickname=#{userNickname}
+        where user_id=#{userId}
+    </update>
+
+    <select id="selectById" resultType="Instauser">
+        select *
+        from instauser
+        where user_id = #{id}
+    </select>
 </mapper>

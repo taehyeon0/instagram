@@ -28,13 +28,18 @@ public class InstauserRepository {
     }*/
 
     public List<Instauser> selectAll() {
-
         return instauserMapper.selectAll();
-
     }
 
     public void save(Instauser instauser) {
         instauserMapper.save(instauser);
+    }
+
+    public Instauser selectById(long id) {
+        return instauserMapper.selectById(id);
+    }
+    public void update(Instauser instauser) {
+        instauserMapper.update(instauser);
     }
 
 
