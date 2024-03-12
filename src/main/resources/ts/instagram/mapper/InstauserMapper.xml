@@ -7,4 +7,9 @@
     <select id="selectAll" resultType="hashmap">
         select * from Instauser
     </select>
+
+    <insert id="save">
+        insert into instauser (user_id, user_nickname, password, email, name, phone, content, created_at, created_by, modified_at, modified_by)
+        values (#{userId}, #{userNickname}, #{password}, #{email}, #{name}, #{phone}, #{content}, #{createdAt}, #{createdBy}, #{modifiedAt}, #{modifiedBy})
+    </insert>
 </mapper>

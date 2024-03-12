@@ -3,6 +3,7 @@ package ts.instagram.repository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
+import ts.instagram.domain.Feed;
 import ts.instagram.domain.Instauser;
 import ts.instagram.mapper.InstauserMapper;
 
@@ -30,6 +31,10 @@ public class InstauserRepository {
 
         return instauserMapper.selectAll();
 
+    }
+
+    public void save(Instauser instauser) {
+        instauserMapper.save(instauser);
     }
 
 
