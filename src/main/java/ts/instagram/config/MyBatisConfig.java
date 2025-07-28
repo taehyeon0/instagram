@@ -27,4 +27,5 @@ public class MyBatisConfig {
         return new InstauserRepository(instauserMapper);
     }
 
+
 }
